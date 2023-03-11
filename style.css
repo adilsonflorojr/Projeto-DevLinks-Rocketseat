@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text)
+}
+:root{
+    --text: black;
+    --bground: url(./background/backgroundlmode.jpg);
+    --color: black;
+    --surface: rgba(0,0,0,0.2);
+    --surface-hover: rgba(255,255,255,0.05);
+    --shadowbox: black;
+    --icones-hover: rgba(0,0,0,0.1);
+    --mode: url(./background/backgroundiconsun.svg);
+    
+}
+.light #mode button{
+    left: 0;
+    right: initial;
+    
+}
+.light{
+    --text: white;
+    --bground: url(./background/backgrounddmode.jpg);
+    --color: rgba(255, 255, 255, 0.05);
+    --surface: rgba(0,0,0,0.3);
+    --surface-hover: rgba(0,0,0,0.02);
+    --shadowbox: white;
+    --icones-hover: rgba(255,255,255,0.2);
+    --mode: url(./background/backgroundicon.svg);
+}
+
+#mode{
+    position: relative;
+    width: 4rem;
+    margin: 30px auto;
+    
+}
+#mode button{
+    width: 2rem;
+    height: 2rem;
+    background: white var(--mode) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    
+}
+#mode p{
+    width: 4rem;
+    height: 1.5rem;
+    background: var(--surface);
+    border: 2px solid var(--color);
+    border-radius: 10000px;
+
+}
+body{
+    background: var(--bground) no-repeat top center/cover;
+    height: 104vh;
+    display: flex;
+    align-items: center;
+}
+#container{
+    width: 20rem;
+    height: 45rem;
+    margin: 30px auto;
+    background-color: transparent;
+    
+}
+#profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+#profile img{
+    border-radius: 50%;
+    width: 8rem;
+    height: 8.4rem;
+    background-color: rgba(102, 76, 124, 0.568);
+    color: rgba(71, 45, 92, 0.568);
+}
+#identificacao{
+    font-size: 1rem;
+    display: inline;
+    font-weight: 500;
+    line-height: 1.3rem;
+    margin-top: 0.5rem;
+    background-color: transparent;
+}
+#redirecionar{
+    
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+#redirecionar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+#redirecionar li a{
+    background-color: var(--surface);
+    border: 2px solid var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 1rem 1.5rem;
+    border-radius: 9px;
+    backdrop-filter: blur(6px);
+    width: 20rem;
+
+}
+#redirecionar li a:hover{
+    background-color: var(--surface-hover);
+    border: 2px solid var(--text);
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px var(--shadowbox);
+    transition: all 0.7s;
+}
+.icones{
+    gap: 10px;
+    padding: 25px 1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 25px;
+}
+.icones a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem;
+    border-radius: 50%;
+}
+.icones a:hover{
+    background-color: var(--icones-hover);
+    cursor: pointer;
+    transition: all 0.7s;   
+}
+
+@media (min-width: 800px){
+    :root{
+        --bground: url(./background/backgrounddesktopl.jpg);
+    }
+    .light{
+        --bground: url(./background/backgrounddesktopd.jpg);
+    }
+}
